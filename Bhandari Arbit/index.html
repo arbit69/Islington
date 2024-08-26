@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Envatomarket Button</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #slider {
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            /* Set slider height to 90% of viewport height */
+        }
+    </style>
+</head>
+
+<body>
+    <div
+        class="flex justify-between items-start bg-slate-900 p-3 border border-gray-300 border-x-0 border-y-0 shadow-sm w-full max-w-full h-[55px]">
+        <span class="text-lg font-semibold text-white">envatomarket</span>
+        <a href="#" class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">
+            Buy now
+        </a>
+    </div>
+    <header class="bg-black text-white p-4 h-[90px] items-center">
+        <div class="container mx-auto flex items-center justify-around">
+            <div class="flex items-center space-x-8 mb-4">
+                <img src="./header-logo.png" alt="EDUMY Logo" class="h-auto" />
+                <span class="text-xl font-bold">EDUMY</span>
+                <div class="relative group">
+                    <button
+                        class="bg-blue-600 text-white px-4 py-2 h-[52px] w-[125px] text-center rounded-full flex items-center relative z-10">
+                        LIBRARY
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute right-0 mt-0 w-48 bg-white text-black rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-20">
+                        <a href="#" class="bg-black text-white block px-4 py-2 hover:text-lg active:text-lg transition-all">Option 1</a>
+                        <a href="#" class="bg-black text-white block px-4 py-2 hover:text-lg active:text-lg transition-all">Option 2</a>
+                        <a href="#" class="bg-black text-white block px-4 py-2 hover:text-lg active:text-lg transition-all">Option 3</a>
+                    </div>
+                </div>
+                <input type="text" placeholder="Search for the software or skills you want to learn."
+                    class="bg-white text-black px-4 py-2 placeholder-gray-400 min-w-[28rem] h-[50px] rounded-full h-13" />
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#">+(90) 123 456 789</a>
+                <select class="bg-black text-white px-4 py-2 rounded">
+                    <option value="" disabled selected>Select Language</option>
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex items-center justify-around space-x-60">
+            <!-- Home Dropdown -->
+            <div class="flex items-center">
+                <!-- Home Dropdown -->
+                <div class="relative group">
+                    <a href="/home" class="bg-gray-800 text-white px-4 py-2 rounded flex items-center">
+                        Home
+                        <svg class="w-4 h-4 ml-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-0 w-48 bg-black text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden group-hover:block">
+                        <a href="/home/subpage1" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Subpage 1</a>
+                        <a href="/home/subpage2" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Subpage 2</a>
+                    </div>
+                </div>
+                <!-- Courses Dropdown -->
+                <div class="relative group">
+                    <a href="/courses" class="bg-gray-800 text-white px-4 py-2 rounded flex items-center">
+                        Courses
+                        <svg class="w-4 h-4 ml-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-0 w-48 bg-black text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden group-hover:block">
+                        <a href="/courses/course1" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Course 1</a>
+                        <a href="/courses/course2" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Course 2</a>
+                    </div>
+                </div>
+                <!-- Events Dropdown -->
+                <div class="relative group">
+                    <a href="/events" class="bg-gray-800 text-white px-4 py-2 rounded flex items-center">
+                        Events
+                        <svg class="w-4 h-4 ml-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-0 w-48 bg-black text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden group-hover:block">
+                        <a href="/events/event1" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Event 1</a>
+                        <a href="/events/event2" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Event 2</a>
+                    </div>
+                </div>
+                <!-- Pages Dropdown -->
+                <div class="relative group">
+                    <a href="/pages" class="bg-gray-800 text-white px-4 py-2 rounded flex items-center">
+                        Pages
+                        <svg class="w-4 h-4 ml-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-0 w-48 bg-black text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden group-hover:block">
+                        <a href="/pages/page1" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Page 1</a>
+                        <a href="/pages/page2" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Page 2</a>
+                    </div>
+                </div>
+                <!-- Blog Dropdown -->
+                <div class="relative group">
+                    <a href="/blog" class="bg-gray-800 text-white px-4 py-2 rounded flex items-center">
+                        Blog
+                        <svg class="w-4 h-4 ml-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-0 w-48 bg-black text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden group-hover:block">
+                        <a href="/blog/blog1" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Blog 1</a>
+                        <a href="/blog/blog2" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Blog 2</a>
+                    </div>
+                </div>
+                <!-- Contact -->
+                <a href="/contact" class="bg-gray-800 text-white px-4 py-2 rounded flex items-center">
+                    Contact
+                </a>
+            </div>
+            <!-- Additional Info -->
+            <div class="flex space-x-4 items-center">
+                <a href="#">Become an Instructor</a>
+                <span class="inline-block h-8 border-l-2 border-x-gray-500 mx-2"></span>
+                <a href="#">Login/Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative h-screen">
+        <div id="slider" class="relative h-full">
+            <!-- Background image overlay with RGBA color -->
+            <div class="absolute inset-0 bg-black" style="opacity: 0.7"></div>
+            <!-- Slider images will be inserted here by JavaScript -->
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    START INVESTING IN YOU
+                </h1>
+                <p class="text-xl md:text-2xl mb-8">
+                    Technology is bringing a massive wave of evolution on learning
+                    things in different ways
+                </p>
+                <button class="bg-white text-gray-800 px-8 py-3 rounded-full text-lg font-semibold">
+                    Ready to get Started?
+                </button>
+            </div>
+        </div>
+        <div class="absolute inset-y-1/2 left-0 right-0 flex items-center justify-between px-4">
+            <button id="prevBtn" class="text-white text-2xl">
+                <i class="fas fa-chevron-left"></i> PREV
+            </button>
+            <button id="nextBtn" class="text-white text-2xl">
+                NEXT <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </main>
+
+    <script>
+        const slider = document.getElementById("slider");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const images = [
+            './4.jpg',
+            './6.jpg',
+            './5.jpg'
+        ];
+        let currentIndex = 0;
+
+        function showImage(index) {
+            slider.style.backgroundImage = `url('${images[index]}')`;
+            slider.style.backgroundSize = "cover";
+            slider.style.backgroundPosition = "center";
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        nextBtn.addEventListener("click", nextImage);
+        prevBtn.addEventListener("click", prevImage);
+
+        showImage(currentIndex);
+    </script>
+</body>
+
+</html>
