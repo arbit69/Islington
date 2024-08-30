@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDUMY - Responsive Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    .testimonial-container {
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .testimonial.active .testimonial-content {
+      background-color: #3b82f6;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .testimonial.active .testimonial-content .text-gray-500 {
+      color: #93c5fd;
+    }
+
+    .quote-mark {
+      font-size: 4rem;
+      line-height: 1;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      opacity: 0.1;
+    }
+  </style>
+</head>
+
+<body class="font-san">
+  <div class="flex justify-between items-center bg-slate-900 p-2 sm:p-3 border-b border-gray-700 shadow-sm w-full">
+    <span class="text-base sm:text-lg font-semibold text-white">envatomarket</span>
+    <a href="#"
+      class="bg-green-500 text-white font-semibold text-sm sm:text-base py-2 px-3 sm:px-4 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors"
+      aria-label="Buy now">
+      Buy now
+    </a>
+  </div>
+
+  <header class="bg-black text-white p-4">
+    <div class="container mx-auto">
+      <div class="flex flex-col lg:flex-row items-center justify-center space-x-8">
+        <div class="flex items-center justify-between w-full lg:w-auto">
+          <div class="flex items-center space-x-4">
+            <img src="./header-logo.png" alt="EDUMY Logo" class="h-10 w-10" />
+            <span class="text-xl font-bold">EDUMY</span>
+          </div>
+          <button id="menuToggle" class="lg:hidden text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        <div id="mobileMenu"
+          class="hidden lg:flex flex-col lg:flex-row items-center justify-between w-full lg:w-auto mt-4 lg:mt-0">
+          <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-8 mb-4 lg:mb-0">
+            <div class="relative group w-full lg:w-auto">
+              <a href="#" id="librarybutton"
+                class="bg-blue-600 text-white px-4 py-2 h-12 w-full lg:w-[125px] text-center rounded-full flex items-center justify-center relative z-10 text-sm">
+                LIBRARY
+                <i class="fas fa-chevron-down ml-2"></i>
+              </a>
+              <div id="dropdownL"
+                class="w-full bg-black text-white rounded shadow-lg transition-all duration-300 z-20 hidden md:group-hover:block md:absolute md:left-0 md:mt-0 md:w-48">
+                <a href="#"
+                  class="bg-black text-white block px-4 py-2 hover:text-lg active:text-lg transition-all">Option 1</a>
+                <a href="#"
+                  class="bg-black text-white block px-4 py-2 hover:text-lg active:text-lg transition-all">Option 2</a>
+                <a href="#"
+                  class="bg-black text-white block px-4 py-2 hover:text-lg active:text-lg transition-all">Option 3</a>
+              </div>
+            </div>
+            <div class="relative w-full lg:w-auto">
+              <input type="text" placeholder="Search for software or skills..."
+                class="bg-white text-black px-4 py-2 pl-10 placeholder-gray-400 w-full lg:w-[28rem] h-12 lg:h-10 rounded-full text-xs lg:text-sm" />
+              <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4 text-xs">
+          <a href="#" class="text-center lg:text-left items-center lg:block hidden sm:flex">
+            <i class="fas fa-globe mr-2"></i>
+            +(90) 123 456 789
+          </a>
+          <select
+            class="bg-black text-white px-4 py-2 rounded lg:w-auto w-auto lg:block hidden sm:block sm:mx-auto sm:text-center text-xs">
+            <option value="" disabled selected>Select Language</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+
+
+  <nav class="bg-gray-800  text-white lg:p-4 md:  sm:mx-auto sm:text-center">
+    <div class="container mx-auto">
+      <div id="navMenu" class="hidden lg:flex flex-col lg:flex-row items-center justify-around space-x-16">
+        <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mb-4 lg:mb-0">
+          <div class="relative group">
+            <a href="#" id="homeButton"
+              class="bg-gray-800 text-white px-2 lg:px-4 py-2 rounded flex items-center justify-between w-full text-xs">
+              Home
+              <i class="fas fa-chevron-down ml-1"></i>
+            </a>
+            <div id="dropdown"
+              class="w-full bg-black text-white rounded shadow-lg transition-all duration-300 z-20 hidden md:group-hover:block md:absolute md:left-0 md:mt-0 md:w-48">
+              <a href="/home/sub1" class="block px-4 py-2 hover:bg-gray-700 active:bg-gray-600 transition-all">Sub Home
+                1</a>
+              <a href="/home/sub2" class="block px-4 py-2 hover:bg-gray-700 active:bg-gray-600 transition-all">Sub Home
+                2</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <a href="#" id="CoursesButton"
+              class="bg-gray-800 text-white px-2 lg:px-4 py-2 rounded flex items-center justify-between w-full text-xs">
+              Courses
+              <i class="fas fa-chevron-down ml-1"></i>
+            </a>
+            <div id="dropdownC"
+              class="w-full bg-black text-white rounded shadow-lg transition-all duration-300 z-20 hidden md:group-hover:block md:absolute md:left-0 md:mt-0 md:w-48">
+              <a href="/courses/sub1" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Sub Courses
+                1</a>
+              <a href="/courses/sub2" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Sub Courses
+                2</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <a href="#" id="EventButton"
+              class="bg-gray-800 text-white px-2 lg:px-4 py-2 rounded flex items-center justify-between text-xs">
+              Events
+              <i class="fas fa-chevron-down ml-1"></i>
+            </a>
+            <div id="dropdownE"
+              class="w-full bg-black text-white rounded shadow-lg transition-all duration-300 z-20 hidden md:group-hover:block md:absolute md:left-0 md:mt-0 md:w-48">
+              <a href="/events/sub1" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Sub Events
+                1</a>
+              <a href="/events/sub2" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Sub Events
+                2</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <a href="#" id="PagesButton"
+              class="bg-gray-800 text-white px-2 lg:px-4 py-2 rounded flex items-center justify-between text-xs">
+              Pages
+              <i class="fas fa-chevron-down ml-1"></i>
+            </a>
+            <div id="dropdownP"
+              class="w-full bg-black text-white rounded shadow-lg transition-all duration-300 z-20 hidden md:group-hover:block md:absolute md:left-0 md:mt-0 md:w-48">
+              <a href="/pages/sub1" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Sub Pages 1</a>
+              <a href="/pages/sub2" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Sub Pages 2</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <a href="#" id="BlogButton"
+              class="bg-gray-800 text-white px-2 lg:px-4 py-2 rounded flex items-center justify-between text-xs">
+              Blog
+              <i class="fas fa-chevron-down ml-1"></i>
+            </a>
+            <div id="dropdownB"
+              class="w-full bg-black text-white rounded shadow-lg transition-all duration-300 z-20 hidden md:group-hover:block md:absolute md:left-0 md:mt-0 md:w-48">
+              <a href="/blog/sub1" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Sub Blog 1</a>
+              <a href="/blog/sub2" class="block px-4 py-2 hover:text-lg active:text-lg transition-all">Sub Blog 2</a>
+            </div>
+          </div>
+          <a href="/contact" class="bg-gray-800 text-white px-2 lg:px-4 py-2 rounded flex items-center text-xs">
+            Contact
+          </a>
+        </div>
+        <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 items-center">
+          <a href="#" class="text-center lg:text-left flex items-center text-xs	">
+            <i class="fas fa-user mr-2"></i>
+            Become an Instructor
+          </a>
+          <span class="hidden lg:inline-block h-8 border-l-2 border-x-gray-500 mx-2 "></span>
+          <a href="#" class="text-center text-xs lg:text-left">Login/Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="relative h-screen">
+    <div id="slider" class="relative h-[90vh] bg-cover bg-center">
+      <div class="absolute inset-0 bg-black opacity-70"></div>
+      <!-- Add your slider content here -->
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center px-4">
+      <div class="text-center text-white">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          START INVESTING IN YOU
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl mb-8">
+          Technology is bringing a massive wave of evolution on learning
+          things in different ways
+        </p>
+        <button
+          class="bg-transparent text-white border-2 px-6 sm:px-8 py-2 sm:py-3 rounded-full text-base sm:text-lg font-semibold">
+          Ready to get Started?
+        </button>
+      </div>
+    </div>
+    <div class="absolute inset-y-1/2 left-0 right-0 flex items-center justify-between px-4">
+      <button id="prevBtnu" class="text-white bg-transparent text-xl sm:text-2xl flex items-center">
+        <i class="fas fa-chevron-left mr-2"></i>
+        PREV
+      </button>
+      <button id="nextBtnu" class="text-white bg-transparent text-xl sm:text-2xl flex items-center">
+        NEXT
+        <i class="fas fa-chevron-right ml-2"></i>
+      </button>
+    </div>
+  </main>
+  <div class="bg-white p-8">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-4">Browse Our Top Courses</h1>
+      <p class="text-center text-gray-600 mb-8">Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+        <!-- Course Card Template -->
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 group hover:shadow-2xl">
+          <div class="relative">
+            <img src="./4.jpg" alt="Course Image" class="w-full h-48 object-cover">
+            <button class="absolute top-4 right-4 text-white bg-transparent hover:text-red-500 transition-colors duration-300">
+              <i class="far fa-heart text-2xl "></i>
+            </button>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-lg font-semibold">Preview Course</span>
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Top Seller
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-gray-500 text-sm mb-2">Ali TUFAN</h3>
+            <h2 class="text-xl font-semibold mb-4">Introduction Web Design with HTML</h2>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-600 ml-2">(6)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center text-gray-600">
+                <i class="far fa-user mr-2"></i>
+                <span>1548</span>
+                <i class="far fa-file-alt ml-4 mr-2"></i>
+                <span>25</span>
+              </div>
+              <span class="text-red-500 font-semibold">$69.95</span>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat the course card template for other courses -->
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 group hover:shadow-2xl">
+          <div class="relative">
+            <img src="./4.jpg" alt="Course Image" class="w-full h-48 object-cover">
+            <button class="absolute top-4 right-4 text-white bg-transparent hover:text-red-500 transition-colors duration-300">
+              <i class="far fa-heart text-2xl"></i>
+            </button>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-lg font-semibold">Preview Course</span>
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Top Seller
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-gray-500 text-sm mb-2">Ali TUFAN</h3>
+            <h2 class="text-xl font-semibold mb-4">Introduction Web Design with HTML</h2>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-600 ml-2">(6)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center text-gray-600">
+                <i class="far fa-user mr-2"></i>
+                <span>1548</span>
+                <i class="far fa-file-alt ml-4 mr-2"></i>
+                <span>25</span>
+              </div>
+              <span class="text-red-500 font-semibold">$69.95</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 group hover:shadow-2xl">
+          <div class="relative">
+            <img src="./4.jpg" alt="Course Image" class="w-full h-48 object-cover">
+            <button class="absolute top-4 right-4 text-white bg-transparent hover:text-red-500 transition-colors duration-300">
+              <i class="far fa-heart text-2xl"></i>
+            </button>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-lg font-semibold">Preview Course</span>
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Top Seller
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-gray-500 text-sm mb-2">Ali TUFAN</h3>
+            <h2 class="text-xl font-semibold mb-4">Introduction Web Design with HTML</h2>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-600 ml-2">(6)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center text-gray-600">
+                <i class="far fa-user mr-2"></i>
+                <span>1548</span>
+                <i class="far fa-file-alt ml-4 mr-2"></i>
+                <span>25</span>
+              </div>
+              <span class="text-red-500 font-semibold">$69.95</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 group hover:shadow-2xl">
+          <div class="relative">
+            <img src="./4.jpg" alt="Course Image" class="w-full h-48 object-cover">
+            <button class="absolute top-4 right-4 text-white bg-transparent hover:text-red-500 transition-colors duration-300">
+              <i class="far fa-heart text-2xl"></i>
+            </button>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-lg font-semibold">Preview Course</span>
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Top Seller
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-gray-500 text-sm mb-2">Ali TUFAN</h3>
+            <h2 class="text-xl font-semibold mb-4">Introduction Web Design with HTML</h2>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-600 ml-2">(6)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center text-gray-600">
+                <i class="far fa-user mr-2"></i>
+                <span>1548</span>
+                <i class="far fa-file-alt ml-4 mr-2"></i>
+                <span>25</span>
+              </div>
+              <span class="text-red-500 font-semibold">$69.95</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 group hover:shadow-2xl">
+          <div class="relative">
+            <img src="./4.jpg" alt="Course Image" class="w-full h-48 object-cover">
+            <button class="absolute top-4 right-4 text-white bg-transparent hover:text-red-500 transition-colors duration-300">
+              <i class="far fa-heart text-2xl"></i>
+            </button>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-lg font-semibold">Preview Course</span>
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Top Seller
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-gray-500 text-sm mb-2">Ali TUFAN</h3>
+            <h2 class="text-xl font-semibold mb-4">Introduction Web Design with HTML</h2>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-600 ml-2">(6)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center text-gray-600">
+                <i class="far fa-user mr-2"></i>
+                <span>1548</span>
+                <i class="far fa-file-alt ml-4 mr-2"></i>
+                <span>25</span>
+              </div>
+              <span class="text-red-500 font-semibold">$69.95</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 group hover:shadow-2xl">
+          <div class="relative">
+            <img src="./4.jpg" alt="Course Image" class="w-full h-48 object-cover">
+            <button class="absolute top-4 right-4 text-white bg-transparent hover:text-red-500 transition-colors duration-300">
+              <i class="far fa-heart text-2xl"></i>
+            </button>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-lg font-semibold">Preview Course</span>
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Top Seller
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-gray-500 text-sm mb-2">Ali TUFAN</h3>
+            <h2 class="text-xl font-semibold mb-4">Introduction Web Design with HTML</h2>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-600 ml-2">(6)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center text-gray-600">
+                <i class="far fa-user mr-2"></i>
+                <span>1548</span>
+                <i class="far fa-file-alt ml-4 mr-2"></i>
+                <span>25</span>
+              </div>
+              <span class="text-red-500 font-semibold">$69.95</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 group hover:shadow-2xl">
+          <div class="relative">
+            <img src="./4.jpg" alt="Course Image" class="w-full h-48 object-cover">
+            <button class="absolute top-4 right-4 text-white bg-transparent hover:text-red-500 transition-colors duration-300">
+              <i class="far fa-heart text-2xl"></i>
+            </button>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-lg font-semibold">Preview Course</span>
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Top Seller
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-gray-500 text-sm mb-2">Ali TUFAN</h3>
+            <h2 class="text-xl font-semibold mb-4">Introduction Web Design with HTML</h2>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-600 ml-2">(6)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center text-gray-600">
+                <i class="far fa-user mr-2"></i>
+                <span>1548</span>
+                <i class="far fa-file-alt ml-4 mr-2"></i>
+                <span>25</span>
+              </div>
+              <span class="text-red-500 font-semibold">$69.95</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 group hover:shadow-2xl">
+          <div class="relative">
+            <img src="./4.jpg" alt="Course Image" class="w-full h-48 object-cover">
+            <button class="absolute top-4 right-4 text-white bg-transparent hover:text-red-500 transition-colors duration-300">
+              <i class="far fa-heart text-2xl"></i>
+            </button>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-white text-lg font-semibold">Preview Course</span>
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Top Seller
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-gray-500 text-sm mb-2">Ali TUFAN</h3>
+            <h2 class="text-xl font-semibold mb-4">Introduction Web Design with HTML</h2>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="text-gray-600 ml-2">(6)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center text-gray-600">
+                <i class="far fa-user mr-2"></i>
+                <span>1548</span>
+                <i class="far fa-file-alt ml-4 mr-2"></i>
+                <span>25</span>
+              </div>
+              <span class="text-red-500 font-semibold">$69.95</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="font-sans">
+    <div class="container mx-auto px-4 py-8">
+      <div class="text-center mb-8">
+        <a href="#"
+          class="bg-white text-black border border-blue-600 rounded-full px-6 py-2 hover:bg-blue-600 transition duration-300">
+          View All Courses
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./4.jpg');">
+      <!-- Adding a black overlay with transparency -->
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+    </div>
+    <div class="relative bg-black bg-opacity-50 text-white py-16 px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">School Achievements</h2>
+      <p class="text-center mb-12">Here you can review some statistics about our Education Center</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <i class="fas fa-user-graduate text-4xl text-white mb-4"></i>
+          <h3 class="text-4xl font-bold mb-2"><span id="students-count">0</span>m+</h3>
+          <p>Students learning</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-award text-4xl text-white mb-4"></i>
+          <h3 class="text-4xl font-bold mb-2"><span id="graduates-count">0</span></h3>
+          <p>Graduates</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-book-open text-4xl text-white mb-4"></i>
+          <h3 class="text-4xl font-bold mb-2"><span id="free-courses-count">0</span></h3>
+          <p>Free courses</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-chalkboard-teacher text-4xl text-white mb-4"></i>
+          <h3 class="text-4xl font-bold mb-2"><span id="active-courses-count">0</span></h3>
+          <p>Active courses</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bg-white">
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">Upcoming Events</h1>
+      <p class="text-center text-gray-600 mb-8">Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+      <div class="relative overflow-hidden">
+        <div class="slider flex transition-transform duration-500 ease-in-out">
+          <!-- Card 1 -->
+          <div class="w-full md:w-1/3 flex-shrink-0 p-2">
+            <div class="relative bg-white rounded-lg overflow-hidden transition-colors duration-300 group">
+              <img src="./4.jpg" alt="Event 1" class="w-full h-64 md:h-72 lg:h-96 object-cover">
+              <div class="absolute inset-0 bg-black opacity-50"></div>
+              <div
+                class="absolute bottom-4 left-0 right-0 bg-transparent bg-opacity-50 text-white p-2 md:p-4 lg:p-6 flex flex-col justify-end z-10">
+                <p class="text-xs md:text-sm flex items-center">
+                  <span class="mr-2"><i class="far fa-clock"></i> 8:00 am - 5:00 pm</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Vancouver, Canada</span>
+                </p>
+                <h3 class="text-lg md:text-xl font-semibold mt-1 md:mt-2">An Overworked Newspaper Editor</h3>
+              </div>
+              <div
+                class="absolute top-2 right-2 md:top-4 md:right-4 bg-white bg-opacity-80 rounded-lg p-1 md:p-2 text-center text-black z-10">
+                <div class="text-sm md:text-xl font-bold w-14">28</div>
+                <div class="text-xs md:text-sm">March</div>
+              </div>
+              <!-- Pseudo-element for hover effect -->
+              <div
+                class="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0">
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Card 2 -->
+          <div class="w-full md:w-1/3 flex-shrink-0 p-2">
+            <div class="relative bg-white rounded-lg overflow-hidden transition-colors duration-300 group">
+              <img src="./5.jpg" alt="Event 2" class="w-full h-64 md:h-72 lg:h-96 object-cover">
+              <div class="absolute inset-0 bg-black opacity-50"></div>
+              <div
+                class="absolute bottom-4 left-0 right-0 bg-transparent bg-opacity-50 text-white p-2 md:p-4 lg:p-6 flex flex-col justify-end z-10">
+                <p class="text-xs md:text-sm flex items-center">
+                  <span class="mr-2"><i class="far fa-clock"></i> 9:00 am - 4:00 pm</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Toronto, Canada</span>
+                </p>
+                <h3 class="text-lg md:text-xl font-semibold mt-1 md:mt-2">A Solution Built for Teachers</h3>
+              </div>
+              <div
+                class="absolute top-2 right-2 md:top-4 md:right-4 bg-white bg-opacity-80 rounded-lg p-1 md:p-2 text-center text-black">
+                <div class="text-sm md:text-xl font-bold w-14">15</div>
+                <div class="text-xs md:text-sm">April</div>
+              </div>
+              <!-- Pseudo-element for hover effect -->
+              <div
+                class="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0">
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Card 3 -->
+          <div class="w-full md:w-1/3 flex-shrink-0 p-2">
+            <div class="relative bg-white rounded-lg overflow-hidden transition-colors duration-300 group">
+              <img src="./6.jpg" alt="Event 3" class="w-full h-64 md:h-72 lg:h-96 object-cover">
+              <div class="absolute inset-0 bg-black opacity-50"></div>
+              <div
+                class="absolute bottom-4 left-0 right-0 bg-transparent bg-opacity-50 text-white p-2 md:p-4 lg:p-6 flex flex-col justify-end z-10">
+                <p class="text-xs md:text-sm flex items-center">
+                  <span class="mr-2"><i class="far fa-clock"></i> 10:00 am - 6:00 pm</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Montreal, Canada</span>
+                </p>
+                <h3 class="text-lg md:text-xl font-semibold mt-1 md:mt-2">The Future of AI in Education</h3>
+              </div>
+              <div
+                class="absolute top-2 right-2 md:top-4 md:right-4 bg-white bg-opacity-80 rounded-lg p-1 md:p-2 text-center text-black">
+                <div class="text-sm md:text-xl font-bold w-14">5</div>
+                <div class="text-xs md:text-sm">May</div>
+              </div>
+              <!-- Pseudo-element for hover effect -->
+              <div
+                class="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="bg-indigo-900 text-white min-h-95 py-12">
+    <div class="container mx-auto px-4 relative">
+      <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">Popular Courses</h1>
+      <p class="text-center mb-8 text-lg">Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+
+      <!-- Wrapper for Carousel and Buttons -->
+      <div class="relative flex items-center justify-between">
+        <!-- Previous Button (Outside the Carousel) -->
+        <button id="prevCourseBtn"
+          class="bg-white text-indigo-900 w-10 h-10  rounded-full shadow-lg flex items-center justify-center">
+          &#8592;
+        </button>
+
+        <!-- Course Carousel -->
+        <div class="flex-1 overflow-hidden mx-4">
+          <div id="courseCarousel" class="flex transition-transform duration-500 ease-in-out"
+            style="will-change: transform;">
+            <!-- Course cards will be dynamically added here -->
+          </div>
+        </div>
+
+        <!-- Next Button (Outside the Carousel) -->
+        <button id="nextCourseBtn"
+          class="bg-white text-indigo-900 w-10 h-10  rounded-full shadow-lg flex items-center justify-center">
+          &#8594;
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bg-white flex items-center justify-center min-h-screen">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center mb-4">What People Say</h1>
+      <p class="text-center text-gray-600 mb-8">Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+
+      <div class="relative overflow-hidden">
+        <div id="testimonials" class="flex testimonial-container">
+          <!-- Testimonials will be dynamically inserted here -->
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-8">
+        <button class="w-3 h-3 rounded-full bg-blue-500 mx-1" data-index="0"></button>
+        <button class="w-3 h-3 rounded-full bg-gray-300 mx-1" data-index="1"></button>
+        <button class="w-3 h-3 rounded-full bg-gray-300 mx-1" data-index="2"></button>
+        <button class="w-3 h-3 rounded-full bg-gray-300 mx-1" data-index="3"></button>
+        <button class="w-3 h-3 rounded-full bg-gray-300 mx-1" data-index="4"></button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="bg-white p-14 mt-8">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row gap-4">
+        <div
+          class="w-full text-center md:w-1/2 bg-gray-100 rounded-lg p-24 flex flex-col justify-between items-center min-h-[200px]">
+          <div>
+            <h2 class="text-2xl font-bold text-black mb-2">Become an Instructor</h2>
+            <p class="text-black text-sm mb-4">Teach what you love. Dove School gives you the tools to create an
+              online
+              course.</p>
+          </div>
+          <a href="#"
+            class="bg-blue-600 flex text-white px-4 py-2 rounded w-max text-sm font-semibold hover:bg-blue-700 transition duration-300">
+            Start Teaching →
+          </a>
+        </div>
+        <div
+          class="w-full md:w-1/2 bg-gray-100 rounded-lg p-24 flex flex-col justify-between items-center text-center min-h-[200px]">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Dove School For Business</h2>
+            <p class="text-gray-800 text-sm mb-4">Get unlimited access to 2,500 of Udemy's top courses for your team.
+            </p>
+          </div>
+          <a href="#"
+            class="bg-gray-900 text-white px-4 py-2 rounded w-max text-sm font-semibold hover:bg-gray-800 transition duration-300">
+            Doing Business →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gray-900 text-gray-300">
+    <footer class="py-10 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <!-- Contact Section -->
+          <div class="space-y-3">
+            <h2 class="text-white text-lg font-semibold">CONTACT</h2>
+            <p>329 Queensberry Street, North Melbourne</p>
+            <p>VIC 3051, Australia</p>
+            <p>123 456 7890</p>
+            <p>support@edumy.com</p>
+          </div>
+
+          <!-- Company Section -->
+          <div class="space-y-3">
+            <h2 class="text-white text-lg font-semibold">COMPANY</h2>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover-underline">About Us</a></li>
+              <li><a href="#" class="hover-underline">Blog</a></li>
+              <li><a href="#" class="hover-underline">Contact</a></li>
+              <li><a href="#" class="hover-underline">Become a Teacher</a></li>
+            </ul>
+          </div>
+
+          <!-- Programs Section -->
+          <div class="space-y-3">
+            <h2 class="text-white text-lg font-semibold">PROGRAMS</h2>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover-underline">Nanodegree Plus</a></li>
+              <li><a href="#" class="hover-underline">Veterans</a></li>
+              <li><a href="#" class="hover-underline">Georgia</a></li>
+              <li><a href="#" class="hover-underline">Self-Driving Car</a></li>
+            </ul>
+          </div>
+
+          <!-- Support Section -->
+          <div class="space-y-3">
+            <h2 class="text-white text-lg font-semibold">SUPPORT</h2>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover-underline">Documentation</a></li>
+              <li><a href="#" class="hover-underline">Forums</a></li>
+              <li><a href="#" class="hover-underline">Language Packs</a></li>
+              <li><a href="#" class="hover-underline">Release Status</a></li>
+            </ul>
+          </div>
+
+          <!-- Mobile Section -->
+          <div class="space-y-3">
+            <h2 class="text-white text-lg font-semibold">MOBILE</h2>
+            <a href="#"
+              class="flex items-center space-x-2 bg-gray-800 p-2 rounded-md hover:bg-blue-700 transition duration-300">
+              <i class="fab fa-apple"></i>
+              <div>
+                <div class="text-xs">Available now on the</div>
+                <div class="text-sm font-semibold">App Store</div>
+              </div>
+            </a>
+            <a href="#"
+              class="flex items-center space-x-2 bg-gray-800 p-2 rounded-md hover:bg-blue-700 transition duration-300">
+              <i class="fab fa-google-play"></i>
+              <div>
+                <div class="text-xs">Get it on</div>
+                <div class="text-sm font-semibold">Google Play</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <div class="bg-gray-900 text-white">
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6">
+      <div class="container mx-auto px-4">
+        <!-- Logo and Navigation -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between">
+          <!-- Logo and Navigation Links -->
+          <div class="flex flex-col md:flex-row items-center mb-4 md:mb-0">
+            <!-- Logo -->
+            <img src="./header-logo.png" alt="Edumy Logo" class="h-10 mr-4 mb-4 md:mb-0">
+            <!-- Navigation Links -->
+            <nav class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-sm">
+              <a href="#" class="hover:underline">Home</a>
+              <a href="#" class="hover:underline">Privacy</a>
+              <a href="#" class="hover:underline">Terms</a>
+              <a href="#" class="hover:underline">Sitemap</a>
+              <a href="#" class="hover:underline">Purchase</a>
+            </nav>
+          </div>
+          <!-- Social Media Icons -->
+          <div class="flex justify-center md:justify-end space-x-4">
+            <a href="#" class="hover:text-gray-400"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-gray-400"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-gray-400"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="hover:text-gray-400"><i class="fab fa-dribbble"></i></a>
+            <a href="#" class="hover:text-gray-400"><i class="fab fa-google"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="bg-gray-900 text-white">
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-center items-center">
+          <p class="text-center text-sm"> Copyright Edumy &copy; 2019 Edumy. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+
+  <script>
+
+    const librarybutton = document.getElementById('librarybutton');
+    const dropdownL = document.getElementById('dropdownL');
+
+    librarybutton.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        dropdownL.classList.toggle('hidden');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        dropdownL.classList.add('hidden');
+      }
+    });
+
+    const homeButton = document.getElementById('homeButton');
+    const dropdown = document.getElementById('dropdown');
+
+    homeButton.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        dropdown.classList.toggle('hidden');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        dropdown.classList.add('hidden');
+      }
+    });
+
+    const CoursesButton = document.getElementById('CoursesButton');
+    const dropdownC = document.getElementById('dropdownC');
+
+    CoursesButton.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        dropdownC.classList.toggle('hidden');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        dropdownC.classList.add('hidden');
+      }
+    });
+
+    const EventButton = document.getElementById('EventButton');
+    const dropdownE = document.getElementById('dropdownE');
+
+    EventButton.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        dropdownE.classList.toggle('hidden');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        dropdownE.classList.add('hidden');
+      }
+    });
+
+    const PagesButton = document.getElementById('PagesButton');
+    const dropdownP = document.getElementById('dropdownP');
+
+    PagesButton.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        dropdownP.classList.toggle('hidden');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        dropdownP.classList.add('hidden');
+      }
+    });
+
+    const BlogButton = document.getElementById('BlogButton');
+    const dropdownB = document.getElementById('dropdownB');
+
+    BlogButton.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        dropdownB.classList.toggle('hidden');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        dropdownB.classList.add('hidden');
+      }
+    });
+
+    document
+      .getElementById("menuToggle")
+      .addEventListener("click", function () {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+        document.getElementById("navMenu").classList.toggle("hidden");
+      });
+    const slider = document.getElementById("slider");
+    const prevBtnu = document.getElementById("prevBtnu");
+    const nextBtnu = document.getElementById("nextBtnu");
+    const images = [
+      './4.jpg',
+      './6.jpg',
+      './5.jpg'
+    ];
+    let currentIndex = 0;
+
+    function showImage(index) {
+      slider.style.backgroundImage = `url('${images[index]}')`;
+      slider.style.backgroundSize = "cover";
+      slider.style.backgroundPosition = "center";
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    nextBtnu.addEventListener("click", nextImage);
+    prevBtnu.addEventListener("click", prevImage);
+
+    showImage(currentIndex);
+
+    function animateCounter(elementId, targetValue, duration) {
+      const element = document.getElementById(elementId);
+      const startValue = 0;
+      const increment = targetValue / (duration / 16); // 60 FPS
+      let currentValue = startValue;
+
+      const updateCounter = () => {
+        currentValue += increment;
+        if (currentValue < targetValue) {
+          element.textContent = Math.round(currentValue);
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = targetValue;
+        }
+      };
+
+      updateCounter();
+    }
+
+    // Start the counter animations when the page loads
+    window.addEventListener('load', () => {
+      animateCounter('students-count', 65, 2000);
+      animateCounter('graduates-count', 58263, 2000);
+      animateCounter('free-courses-count', 896673, 2000);
+      animateCounter('active-courses-count', 8570, 2000);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const slider = document.querySelector('.slider');
+      const slides = Array.from(slider.children);
+      const totalSlides = slides.length;
+
+      // Clone slides for continuous sliding
+      slides.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        slider.appendChild(clone);
+      });
+
+      let slideIndex = 0;
+      let slideWidth = slides[0].offsetWidth;
+
+      function updateSlideWidth() {
+        slideWidth = window.innerWidth < 768 ? slider.offsetWidth : slider.offsetWidth / 3;
+      }
+
+      function moveSlider() {
+        slideIndex++;
+        slider.style.transition = 'transform 0.5s ease-in-out';
+        updateSliderPosition();
+
+        if (slideIndex === totalSlides) {
+          setTimeout(() => {
+            slider.style.transition = 'none';
+            slideIndex = 0;
+            updateSliderPosition();
+          }, 500);
+        }
+      }
+
+      function updateSliderPosition() {
+        slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+      }
+
+      // Update slide width and position on window resize
+      window.addEventListener('resize', () => {
+        updateSlideWidth();
+        updateSliderPosition();
+      });
+
+      // Initial setup
+      updateSlideWidth();
+
+      // Move the slider every 3 seconds
+      setInterval(moveSlider, 5000);
+    });
+
+
+    // this
+    const courseCarousel = document.getElementById('courseCarousel');
+    const prevCourseBtn = document.getElementById('prevCourseBtn');
+    const nextCourseBtn = document.getElementById('nextCourseBtn');
+
+    const courses = [
+      { image: './4.jpg', title: 'How to Make Beautiful Landscape Photos?', author: 'Ali TUFAN' },
+      { image: './5.jpg', title: 'Fashion Photography From Professional', author: 'Ali TUFAN' },
+      { image: './6.jpg', title: 'Introduction Web Design with HTML', author: 'Ali TUFAN' },
+      { image: './4.jpg', title: 'Designing a Responsive Mobile Website with Muse', author: 'Ali TUFAN' },
+      { image: './5.jpg', title: 'Adobe XD: Prototyping Tips and Tricks', author: 'Ali TUFAN' },
+      { image: './6.jpg', title: 'Mastering Digital Marketing Strategies', author: 'Ali TUFAN' },
+      { image: './5.jpg', title: 'Advanced JavaScript Programming', author: 'Ali TUFAN' }
+    ];
+
+    let currentCourseIndex = 0;
+    let visibleSlides = 5;
+
+    function createCourseCard(course) {
+      return `
+    <div class="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 flex-shrink-0 group">
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg relative">
+        <div class="relative">
+          <img src="${course.image}" alt="${course.title}" class="w-full h-40 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white text-lg font-semibold">Preview Course</span>
+          </div>
+          <div class="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Top Seller
+          </div>
+        </div>
+        <div class="p-4">
+          <p class="text-gray-600 text-xs mb-1">${course.author}</p>
+          <h3 class="text-indigo-900 font-semibold text-sm mb-2 h-10 overflow-hidden">${course.title}</h3>
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 text-xs">★★★★★</span>
+            <span class="text-gray-600 text-xs ml-1">(6)</span>
+          </div>
+          <div class="flex justify-between items-center text-xs">
+            <div class="flex items-center text-gray-600">
+              <span class="mr-2"><i class="fas fa-male"></i> 1548</span>
+              <i class="far fa-file-alt"></i>
+            </div>
+            <span class="text-indigo-900 font-bold">$69.95</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+    }
+
+    function initializeCarousel() {
+      // Clone last `visibleSlides` slides and prepend to start
+      const slides = [...courses.slice(-visibleSlides), ...courses, ...courses.slice(0, visibleSlides)];
+      const slidesHTML = slides.map(createCourseCard).join('');
+      courseCarousel.innerHTML = slidesHTML;
+
+      currentCourseIndex = visibleSlides; // Start at the first real slide
+      updateCourseCarousel(true); // Initialize to the correct slide without animation
+    }
+
+    function updateCourseCarousel(noTransition = false) {
+      const slideWidth = 100 / visibleSlides;
+      courseCarousel.style.transition = noTransition ? 'none' : 'transform 0.9s ease-in-out';
+      courseCarousel.style.transform = `translateX(-${currentCourseIndex * slideWidth}%)`;
+    }
+
+    function slideNextCourse() {
+      currentCourseIndex++;
+      updateCourseCarousel();
+
+      // Check if we need to reset to the beginning
+      if (currentCourseIndex === courses.length + visibleSlides) {
+        setTimeout(() => {
+          courseCarousel.style.transition = 'none';
+          currentCourseIndex = visibleSlides; // Reset to the real first slide
+          updateCourseCarousel(true);
+        }, 900); // Timeout matches the CSS transition duration
+      }
+    }
+
+    function slidePrevCourse() {
+      currentCourseIndex--;
+      updateCourseCarousel();
+
+      // Check if we need to reset to the end
+      if (currentCourseIndex === 0) {
+        setTimeout(() => {
+          courseCarousel.style.transition = 'none';
+          currentCourseIndex = courses.length; // Reset to the real last slide
+          updateCourseCarousel(true);
+        }, 900); // Timeout matches the CSS transition duration
+      }
+    }
+
+    function handleCourseResize() {
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth < 640) {
+        visibleSlides = 1;
+      } else if (windowWidth < 768) {
+        visibleSlides = 2;
+      } else if (windowWidth < 1024) {
+        visibleSlides = 3;
+      } else if (windowWidth < 1280) {
+        visibleSlides = 4;
+      } else {
+        visibleSlides = 5;
+      }
+
+      initializeCarousel(); // Reinitialize carousel to account for visibleSlides change
+    }
+
+    // Initialize
+    initializeCarousel();
+    nextCourseBtn.addEventListener('click', slideNextCourse);
+    prevCourseBtn.addEventListener('click', slidePrevCourse);
+    window.addEventListener('resize', handleCourseResize);
+    handleCourseResize();
+
+
+    const testimonialList = [
+  {
+    name: "Jack Graham",
+    title: "Co founder, Coffee Inc",
+    image: "./7.jpg",
+    text: "It was really fun getting to know the team during the project. They were all helpful in answering my questions and made me feel completely at ease. The design ended up being twice as good as I could have ever envisioned!"
+  },
+  {
+    name: "Aura Brooks",
+    title: "Graphic Designer, Owl Eyes",
+    image: "./8.jpg",
+    text: "It was really fun getting to know the team during the project. They were all helpful in answering my questions and made me feel completely at ease. The design ended up being twice as good as I could have ever envisioned!"
+  },
+  {
+    name: "Ali TUFAN",
+    title: "Client",
+    image: "./9.jpg",
+    text: "It was really fun getting to know the team during the project. They were all helpful in answering my questions and made me feel completely at ease. The design ended up being twice as good as I could have ever envisioned!"
+  },
+  {
+    name: "Tufan Brooks",
+    title: "Title 4",
+    image: "./7.jpg",
+    text: "It was really fun getting to know the team during the project. They were all helpful in answering my questions and made me feel completely at ease. The design ended up being twice as good as I could have ever envisioned!"
+  },
+  {
+    name: "Graham Fufan",
+    title: "Title 5",
+    image: "./8.jpg",
+    text: "It was really fun getting to know the team during the project. They were all helpful in answering my questions and made me feel completely at ease. The design ended up being twice as good as I could have ever envisioned!"
+  }
+];
+
+const testimonialContainer = document.getElementById('testimonials');
+const navigationButtons = document.querySelectorAll('button');
+let activeTestimonialIndex = 0;
+
+function createTestimonialElement(testimonial, index) {
+  const isActive = index === 1;
+  return `
+    <div class="testimonial w-1/3 flex-shrink-0 px-4 transition-all duration-300 ease-in-out ${isActive ? 'active' : 'opacity-50'}">
+        <div class="testimonial-content bg-white p-8 rounded-lg shadow-lg relative transition-all duration-300 flex flex-col items-center text-center">
+            <div class="quote-mark">"</div>
+            <p class="mb-6 relative z-10">${testimonial.text}</p>
+            <img src="${testimonial.image}" alt="${testimonial.name}" class="w-16 h-16 rounded-full mb-4">
+            <div>
+                <h3 class="font-semibold">${testimonial.name}</h3>
+                <p class="text-sm text-gray-500">${testimonial.title}</p>
+            </div>
+        </div>
+    </div>
+  `;
+}
+
+function renderTestimonials() {
+  const visibleTestimonials = [
+    testimonialList[(activeTestimonialIndex - 1 + testimonialList.length) % testimonialList.length],
+    testimonialList[activeTestimonialIndex],
+    testimonialList[(activeTestimonialIndex + 1) % testimonialList.length]
+  ];
+  testimonialContainer.innerHTML = visibleTestimonials.map((testimonial, index) =>
+    createTestimonialElement(testimonial, index)
+  ).join('');
+  updateButtonStyles();
+}
+
+function updateButtonStyles() {
+  navigationButtons.forEach((button, index) => {
+    button.classList.toggle('bg-black', index === activeTestimonialIndex);
+    button.classList.toggle('bg-black', index !== activeTestimonialIndex);
+  });
+}
+
+function slideTestimonials(newIndex) {
+  const direction = newIndex > activeTestimonialIndex ? -1 : 1;
+  const offset = Math.abs(newIndex - activeTestimonialIndex);
+  testimonialContainer.style.transform = `translateX(${direction * offset * 33.33}%)`;
+
+  setTimeout(() => {
+    activeTestimonialIndex = newIndex;
+    renderTestimonials();
+    testimonialContainer.style.transition = 'none';
+    testimonialContainer.style.transform = 'translateX(0)';
+    setTimeout(() => {
+      testimonialContainer.style.transition = 'transform 0.5s ease-in-out';
+    }, 50);
+  }, 500);
+}
+
+navigationButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const newIndex = parseInt(button.getAttribute('data-index'));
+    if (newIndex !== activeTestimonialIndex) {
+      slideTestimonials(newIndex);
+    }
+  });
+});
+
+renderTestimonials();
+
+  </script>
+
+</body>
+
+</html>
